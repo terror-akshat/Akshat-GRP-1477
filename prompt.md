@@ -1,205 +1,234 @@
-You are developing a hospital management system to reduce the waiting time of patient and manual error.
+## Prompt
+
+You are developing a Hospital OPD System to reduce patient waiting time, improve hospital core operations efficiency, and minimize manual errors in daily hospital operations.
+
+--- 
+
+## Objective
+
+The objective of this project is to develop a Hostpital OPD System that helps hospitals reduce patient waiting time, improve core operations, and minimize manual errors. The system will digitize core  hospital operation like patient registration, queue management, billing, ward and bed management, and patient record handling through a secure and user-friendly platform so that every hospital can use the system properly.
+The project is built using the MERN stack to provide a fast, scalable, and efficient solution for managing hospital OPD/IPD workflows.
 
 ## Context and Role
 
-As a MERN stack developer working of smart hospital OPD management system, you are responsible for designing and implementing end to end OPD system, with 3 layered architectures like Frontend, Backend, Database.  The system must have all the core operation of hospital OPD work flow which help reducing waiting time and manual error.
+As a MERN stack developer working on a smart hospital OPD management system, you are responsible for designing and implementing end to end OPD system, with 3 layered architectures like Frontend, Backend, Database. The system must have all the core operation of hospital OPD work flow which help reducing waiting time and manual error.
 
 ## Recommended Tech Stack
 
-### Frontend
+> Frontend
+• React.js for UI
+• building reusable UI components
+• Motion for animation
+• Axios
+• React router Dom
 
-- React.js for UI
-- Material UI for making segments
-- Motion for animation
-- Axios
-- React router Dom
+> Backend
+• Node.js
+• Express.js
+• JWT for authentication and authorization
+• bcrypt
+• Express Rate limiter
+• REST API
+• Role based Authentication (RBAC)
 
-### Backend
+> Database
+• Mongo DB atlas
 
-- Node.js
-- Express.js
-- JWT for authentication and authorization
-- bcrypt
-- Express Rate limiter
-- REST api
-- Role based Authentication (RBAC)
+> File Upload
+• Cloudinary
 
-### Database
+> DevOps/Development
+• Docker
+• Docker-compose
 
-- Mongo DB atlas
-
-### File Upload
-
-- Cloudinary
-
-### Microservice
-
-- Docker
-- Docker-compose
+---
 
 ## Requirements
+1. Authentication & Authorization
 
-- The system includes all these thing as given below.
-- Login/Signup (role-based doctor, staff)
-- Core requirements like
+Roles
+• master
+• staff
 
-1. Upload OPD/IPD documents in image or PDF format using Cloudinary.
-2. Bed management system
-3. Patient profile history
-4. Curd operation for bed and ward management
-5. Billing system
-6. Patient registration form
+Features
+• Singup
+• Login
+• Logout
+• Jwt token management
+• Protected route
 
-## Inputs
+2. OPD/IPD Management
 
-### Signup for staff and doctor
+Patient management
+• patient registration
+• patient profile
+• patient history tracking
+• search and filter
+• upload OPD/IPD Document(image/pdf)
 
-- username
-- Password
-- Gmail
-- Contact number.
+Ward & Bed Management
+• Create Ward
+• Update Ward
+• Delete Ward
+• Bed Allocation
+• Occupied vs Available Bed Tracking
 
-### Login for staff and doctor
+Billing System
+• Generate Invoice
+• Payment Status Tracking
+• Payment Mode
+• Service-based Billing
 
-- email
-- password.
+## Frontend Pages
 
-### Patient registration form
+1. Login
+2. Signup
+3. Patient registration form
+4. Dashboard
+5. Doctor profile
+6. Staff profile
+7. Billing page
+8. Patient history
+9. Queue system page
+10. Ward management
+11. Error/404 page
 
-- Patient name
-- Contact number
-- Email (optional)
-- Profile photo
+## Inputs/Output Validations
+
+1 Signup
+Fields
+• username
+• Password
+• Contact number.
+Rules
+• Password must contain at least 6 characters.
+• Contact number validation using regex.
+
+2 Login
+• Validate the credential username and password.
+• Generate the token and stored into local storage for session management.
+• Return meaningful error response and proper HTTP status codes if authentication fails.
+
+3 Patient registration field
+• Patient name
+• Contact number
+• Address
+• Email (optional)
+• Profile photo
 
 ## Database design
 
-### Doctor Collection
+Doctor Collection
+• Doctor_id
+• name
+• addresss
+• contact_number
+• email
 
-- Doctor_id
-- name
-- contact_number
-- email
+Staff Collection
+• staff_id
+• doctor_id
+• Name
+• addresss
+• contact_number
+• email
 
-### Staff Collection
+Patient Collection
+• Patient_id
+• Doctor_id
+• Name
+• Email (optional)
+• Contact
+• Address
+• OPD_file_id
+• IPD_file_id
 
-- staff_id
-- doctor_id
-- Name
-- contact_number
-- email
+Ward Collection
+• Ward_id
+• Ward_no
+• Bed_count
+• Patient_id : List
+• Status
 
-### Patient Collection
+Billing Collections
+• patientId,
+• doctorId,
+• amount,
+• paymentMode,
+• paymentStatus,
+• invoiceNumber,
+• services: [],
+• createdAt
 
-- Patient_id
-- Doctor_id
-- Name
-- Email (optional)
-- Contact
-- Address
-- OPD_file_id
-- IPD_file_id
+## Rest Api Requirements
 
-### Ward Collection
+Rest api is used for controlling the data and connectivity for fronend and backend
 
-- Ward_id
-- Ward_no
-- Bed_count
-- Patient_id : List
-- Status
+> Authentication/authorization
+• POST api/auth/login
+• POST api/auth/singup
+• POST api/auth/logout
 
-### Billing Collections
+> Patient API
+• GET api/patients
+• POST api/patients
+• PUT /api/patients/:id
+• DELETE /api/patients/:id
+• GET /api/patients/:id
 
-- patientId,
-- doctorId,
-- amount,
-- paymentMode,
-- paymentStatus,
-- invoiceNumber,
-- services: [],
-- createdAt
+> Ward Api
+• GET api/ward
+• GET api/ward/:patient_id
 
-## Pages for frontend
-
-- Login
-- Signup
-- Patient registration form
-- Dashboard
-- Doctor profile
-- Staff profile
-- Billing page
-- Patient history
-- Queue system page
-- Ward management
-
-## Api for Backend
-
-### Authentication/authorization
-
-- POST api/auth/login
-- POST api/auth/singup
-- POST api/auth/logout
-
-### Patient API
-
-- GET api/patients
-- POST api/patients
-- PUT /api/patients/:id
-- DELETE /api/patients/:id
-- GET /api/patients/:id
-
-## Additional Feature
-
-### Rest api
-
-- Token management System
-- Middleware Setup
-- Becrypt for password
-
-### Dashboard
-
-- Patient count
-- Revenue system for patient counts as per weeks, months, year
-- Occupied vs available beds
-
-### Search and filter
-
-- Use search and filter option for filtering the patient data.
-- Use phone number, name to filter out the patient data.
-- Based upon the payment status.
-
-## Security Problems
-
-- CORS setup
-- Mongo sanitizes
-- XSS protection
-- API validation
-- Request validation
+> Security Problems
+• CORS setup
+• Mongo sanitizes
+• XSS protection
+• API validation
+• Request validation
 
 ## Docker Implementation
 
-- Make a Docker file for Frontend and Backend using image node:18 or latest, expose port 3000 for frontend and 5000 for backend,
-- Integrate docker-compose file for integrating these services named as frontend, backend, database which is connected with same network as a bridge for no conflict.
-- Add a dockerignore file for stopping extra file to be pushed to the production.
+• Make a Docker file for Frontend and Backend using image node:18 or latest, expose port 3000 for frontend and 5000 for backend,
+• Integrate docker-compose file for integrating these services named as frontend, backend, database which is connected with same network as a bridge for no conflict.
+• Add a .dockerignore file for stopping extra file to be pushed to the production.
 
-## Efficiency
+## Performance & Scalability
 
-- The system must handle 1000+ patient data without crashing, the backend system must be scalable enough so that handle multiple hospital at a same time. Use Rate limiting for handling Ddos attack.
-- Optimizing the system for getting low latency.
-- Implement Docker for reduce the system dependable, it can run in any OS without fails to make consistency in environment.
+• The system must handle 1000+ patient data without crashing; the backend system must be scalable enough so that handle multiple hospital at a same time. Use Rate limiting for handling Ddos attack.
+• Optimizing the system for getting low latency.
+• Implement Docker for reduce the system dependable, it can run in any OS without fails to make consistency in environment.
+• Use MongoDB indexing for faster search
+• Use lazy loading in frontend
 
 ## Error handling
 
-- The input field have validation like, email is unique also user regex, password should be more then 6 letter and one upper case is mandatory.
-- Login for add validation in user field and pass the credential to the database check if the credential if true so token is generated and saved in local storage for session management else pop a message with valid reason for fail.
-- Use try catch for every api handling to grace fully shut the program if occurred.
-- Add logs to trace the actual error stack path.
+• Use centralized error handling middleware
+• Use try-catch blocks in all API controllers
+• Return meaningful HTTP status codes
+• Add logging for debugging and error tracing
+• Handle validation and database errors gracefully
+{
+"success": false,
+"message": "Invalid credentials"
+}
 
-## Documentation.
+## Documentation
 
-- Add a proper Readme.md which help to know the about the project,
-- Add a proper implementation.md which help to know about the flow and core modules of the project
-- Add a proper docker.md file which help to know about the docker and docker-compose which all services.
+• Add a proper Readme.md which help to know the about the project,
+• Add a proper implementation.md which help to know about the flow and core modules of the project
+• Add a proper docker.md file which help to know about the docker and docker-compose which all services.
 
-## Final
+## Final Deliverables
 
-Developed this system with proper code setup for all requirements, pages.
+Develop the complete system with:
+• Proper folder structure
+• Clean and reusable code
+• Responsive frontend
+• RESTful backend APIs
+• Secure authentication
+• Dockerized deployment
+• Error handling
+• Validation
+• Documentation
+• Production-ready architecture
