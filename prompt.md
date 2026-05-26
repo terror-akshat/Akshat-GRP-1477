@@ -112,7 +112,7 @@ Fields
 - Password
 - Contact number.
 Rules
-- Password must contain at least 6 characters.
+- Password length should be more then 6.
 - Contact number validation using regex.
 
 2 Login
@@ -176,20 +176,20 @@ Billing Collections
 Rest api is used for controlling the data and connectivity for fronend and backend
 
 ### Authentication/authorization
-- POST api/auth/login
-- POST api/auth/singup
-- POST api/auth/logout
+- POST api/auth/login — Used to authenticate users and generate JWT tokens for secure access.
+- POST api/auth/signup — Used to register new staff or admin accounts in the system.
+- POST api/auth/logout — Used to securely end the user session and remove authentication access
 
 ### Patient API
-- GET api/patients
-- POST api/patients
-- PUT /api/patients/:id
-- DELETE /api/patients/:id
-- GET /api/patients/:id
+- GET api/patients — Used to fetch and display all registered patient records.
+- POST api/patients — Used to add or register a new patient into the system.
+- PUT /api/patients/:id — Used to update existing patient details.
+- DELETE /api/patients/:id — Used to delete patient records from database.
+- GET /api/patients/:id — Used to get details of a specific patient.
 
 ### Ward Api
-- GET api/ward
-- GET api/ward/:patient_id
+- GET api/ward — Used to fetch all ward and bed allocation details.
+- GET api/ward/:patient_id — Used to retrieve ward and bed information assigned to a specific patient.
 
 ### Security Problems
 - CORS setup — Stops unknown websites from using your backend APIs.
