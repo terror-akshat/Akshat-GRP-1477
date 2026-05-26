@@ -32,14 +32,14 @@ As a MERN stack developer working on a smart hospital OPD management system, you
 - Role based Authentication (RBAC)
 
 ### Database
-- Mongo DB atlas
+- Mongo DB - used for saving the data
 
 ### File Upload
-- Cloudinary
+- Cloudinary - used for saving the image/pdf.
 
 ### DevOps/Development
-- Docker
-- Docker-compose
+- Docker - make appication run in isloated environment 
+- Docker-compose - handling multple container together
 
 ---
 
