@@ -19,28 +19,47 @@ Core features implemented in the repository include:
 
 ```text
 .
-|-- backend/
-|   |-- Controllers/        # Request handlers and business logic
-|   |-- Databse/            # MongoDB connection setup
-|   |-- Models/             # Mongoose schemas/models
-|   |-- Routes/             # Express route modules
-|   |-- config/             # Redis configuration
-|   |-- cloudnary/          # Cloudinary integration
-|   |-- uploads/            # Local uploaded files
-|   |-- index.js            # Backend entry point
-|   `-- package.json
-|-- frontend/
-|   |-- public/             # Static assets
-|   |-- src/
-|   |   |-- components/     # Reusable UI pieces
-|   |   |-- context/        # Auth context
-|   |   |-- pages/          # Route-level pages
-|   |   |-- axios.js        # API client setup
-|   |   `-- App.jsx         # Frontend routing
-|   `-- package.json
-|-- docker-compose.yml      # Multi-container local setup
-|-- prompt.md               # Original project/problem statement
+|-- Golden-Response/
+|   |-- backend/
+|   |   |-- .dockerignore
+|   |   |-- .env
+|   |   |-- .gitignore
+|   |   |-- cloudnary/          # Cloudinary integration
+|   |   |-- config/             # Redis and other backend config
+|   |   |-- Controllers/        # Request handlers and business logic
+|   |   |-- Databse/            # MongoDB connection setup
+|   |   |-- Dockerfile
+|   |   |-- index.js            # Backend entry point
+|   |   |-- Models/             # Mongoose schemas/models
+|   |   |-- package.json
+|   |   |-- Routes/             # Express route modules
+|   |   |-- uploads/            # Local uploaded files
+|   |   `-- verifyAuth.js
+|   |-- docker-compose.yml      # Multi-container local setup
+|   `-- frontend/
+|       |-- .dockerignore
+|       |-- .env
+|       |-- .gitignore
+|       |-- Dockerfile
+|       |-- eslint.config.js
+|       |-- index.html
+|       |-- package.json
+|       |-- public/             # Static assets
+|       |-- README.md
+|       |-- src/
+|       |   |-- App.css
+|       |   |-- App.jsx
+|       |   |-- axios.js
+|       |   |-- components/     # Reusable UI pieces
+|       |   |-- context/        # Auth context
+|       |   |-- index.css
+|       |   |-- main.jsx
+|       |   |-- pages/          # Route-level pages
+|       |   `-- assets/
+|       |-- vercel.json
+|       `-- vite.config.js
 |-- justfication.md         # Evaluation comparison write-up
+|-- prompt.md               # Original project/problem statement
 `-- README.md
 ```
 
