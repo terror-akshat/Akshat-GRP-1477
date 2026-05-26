@@ -174,7 +174,7 @@ Testing status:
 
 ## Brief Explanation of the Evaluation
 
-The file [justfication.md](/c:/Users/Akshat%20Agarwal/Desktop/Akshat-GRP-1477/justfication.md) contains a short comparative evaluation between two responses labeled GPT and Gemini.
+The file [justfication.md](https://github.com/terror-akshat/Akshat-GRP-1477/blob/main/justfication.md) contains a short comparative evaluation between two responses labeled GPT and Gemini.
 
 In that evaluation:
 
@@ -183,4 +183,4 @@ In that evaluation:
 - Gemini is noted as slightly stronger in correctness and creativity
 - the final verdict says GPT is "slightly better"
 
-For the original implementation requirements and scope of the project, see [prompt.md](/c:/Users/Akshat%20Agarwal/Desktop/Akshat-GRP-1477/prompt.md).
+For the original implementation requirements and scope of the project, see [prompt.md](https://github.com/terror-akshat/Akshat-GRP-1477/blob/main/prompt.md).
