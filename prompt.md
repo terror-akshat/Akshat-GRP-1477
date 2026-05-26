@@ -15,14 +15,14 @@ As a MERN stack developer working on a smart hospital OPD management system, you
 
 ## Recommended Tech Stack
 
-# Frontend
+### Frontend
 - React.js for UI
 - building reusable UI components
 - Motion for animation
 - Axios for connecting backend and frontend
 - React router Dom for routing 
 
-# Backend
+### Backend
 - Node.js
 - Express.js
 - JWT for authentication and authorization
@@ -31,13 +31,13 @@ As a MERN stack developer working on a smart hospital OPD management system, you
 - REST API for data manupulation 
 - Role based Authentication (RBAC)
 
-# Database
+### Database
 - Mongo DB atlas
 
-# File Upload
+### File Upload
 - Cloudinary
 
-# DevOps/Development
+### DevOps/Development
 - Docker
 - Docker-compose
 
@@ -175,28 +175,28 @@ Billing Collections
 
 Rest api is used for controlling the data and connectivity for fronend and backend
 
-# Authentication/authorization
+### Authentication/authorization
 - POST api/auth/login
 - POST api/auth/singup
 - POST api/auth/logout
 
-# Patient API
+### Patient API
 - GET api/patients
 - POST api/patients
 - PUT /api/patients/:id
 - DELETE /api/patients/:id
 - GET /api/patients/:id
 
-# Ward Api
+### Ward Api
 - GET api/ward
 - GET api/ward/:patient_id
 
-# Security Problems
-- CORS setup
-- Mongo sanitizes
-- XSS protection
-- API validation
-- Request validation
+### Security Problems
+- CORS setup — Stops unknown websites from using your backend APIs.
+- Mongo sanitizes — Keeps hackers from injecting harmful database queries.
+- XSS protection — Protects users from malicious scripts on web pages.
+- API validation — Checks if the data sent to APIs is correct.
+- Request validation — Makes sure every request has valid and complete data.
 
 ## Docker Implementation
 
